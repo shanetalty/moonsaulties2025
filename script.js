@@ -1,17 +1,21 @@
-// Smooth scrolling with fade-out effect
-function goToSection(sectionId) {
-    const currentSection = document.querySelector('.section.active');
-    const targetSection = document.getElementById(sectionId);
+// script.js
 
-    if (currentSection && targetSection) {
-        // Fade out current section
-        currentSection.classList.add('fade-out');
-        currentSection.addEventListener('animationend', () => {
-            currentSection.classList.remove('active', 'fade-out');
-            targetSection.classList.add('active');
-        }, { once: true });
+const sections = document.querySelectorAll('.section');
+let currentSection = 0;
+
+function goToSection(sectionId) {
+    const target = document.getElementById(sectionId);
+    if (target) {
+        sections[currentSection].classList.add('fade-out');
+        setTimeout(() => {
+            sections[currentSection].style.display = 'none';
+            target.style.display = 'flex';
+            currentSection = Array.from(sections).indexOf(target);
+        }, 500);
     }
 }
 
-// Set the initial section as active
-document.getElementById('main').classList.add('active');
+// Initialize visibility
+sections.forEach((section, index) => {
+    section.style.display = index === 0 ? 'flex' : 'none';
+});
