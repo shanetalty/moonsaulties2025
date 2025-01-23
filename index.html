@@ -6,40 +6,35 @@
     <title>Moonsaulties 2025</title>
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Main Section -->
-    <div class="section" id="main">
-        <video src="moonsaultiesheader.mp4" autoplay loop muted></video>
+    <!-- Main Page with the Logo -->
+    <div class="main-page">
         <img src="moonsaultieslogo.png" alt="Moonsaulties Logo" class="logo">
-        <div class="nav-button" onclick="goToSection('runners-up')"></div>
+        <div class="scroll-icon" id="next-section">&#8594;</div>
     </div>
-
-    <!-- Runners-Up Section -->
-    <div class="section" id="runners-up">
-        <video src="moonsaultiesheader.mp4" autoplay loop muted></video>
-        <div class="content">
-            <h1>ENTRANCE OF THE YEAR - RUNNERS UP</h1>
-            <h2></h2>
-            <div class="model-container">
-                <model-viewer src="Entrance/ENOTY3.glb" alt="3rd Place Model" camera-controls></model-viewer>
-                <model-viewer src="Entrance/ENOTY2.glb" alt="2nd Place Model" camera-controls></model-viewer>
-            </div>
+    
+    <!-- Runners Up Section -->
+    <section class="award-section" id="runners-up">
+        <div class="text">
+            <h1>EVENT OF THE YEAR - RUNNERS UP</h1>
         </div>
-        <div class="back-button" onclick="goToSection('main')"></div>
-        <div class="nav-button" onclick="goToSection('winner')"></div>
-    </div>
-
-    <!-- Winner Section -->
-    <div class="section" id="winner">
-        <video src="moonsaultiesheader.mp4" autoplay loop muted></video>
-        <div class="content">
-            <h1>ENTRANCE OF THE YEAR</h1>
-            <h2></h2>
-            <model-viewer src="Entrance/ENOTY1.glb" alt="Winner Model" camera-controls></model-viewer>
+        <div class="model-container">
+            <model-viewer src="Entrance/ENOTY3.glb" alt="3D Model for Runners Up Card 1" camera-controls></model-viewer>
+            <model-viewer src="Entrance/ENOTY2.glb" alt="3D Model for Runners Up Card 2" camera-controls></model-viewer>
         </div>
-        <div class="back-button" onclick="goToSection('runners-up')"></div>
-    </div>
+    </section>
+
+    <!-- Winning Event Section -->
+    <section class="award-section" id="winner">
+        <div class="text">
+            <h1>EVENT OF THE YEAR</h1>
+        </div>
+        <div class="model-container">
+            <model-viewer src="Entrance/ENOTY1.glb" alt="3D Model for Winner" camera-controls></model-viewer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
