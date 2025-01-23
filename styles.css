@@ -1,147 +1,116 @@
-/* Reset and full height */
+/* Reset and setup for full page height */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* Full-screen section styling */
-.section {
-    position: absolute; /* Updated to absolute positioning */
-    width: 100vw;
+/* Main page - background video and logo */
+.main-page {
+    position: relative;
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
     overflow: hidden;
-    opacity: 0; /* Hidden initially */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for fade-in */
 }
 
-/* Video background */
-.section video {
+.main-page video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -2; /* Ensure video is at the very back */
+    z-index: -1;
 }
 
-/* Main page logo */
 .logo {
-    width: 750px; /* 2.5x bigger */
-    animation: logoPulse 4s ease-in-out infinite;
+    width: 1200px; /* 4x bigger */
+    animation: logoPulse 4s ease-in-out infinite; /* Slower pulse */
 }
 
+/* Animation for logo scaling (subtle effect) */
 @keyframes logoPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); } /* Reduced scaling */
+    100% { transform: scale(1); }
 }
 
-/* Navigation buttons */
-.nav-button, .back-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background: white;
+/* Scroll icon (right arrow) */
+.scroll-icon {
+    font-size: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: 3px solid white;
     border-radius: 50%;
+    padding: 10px;
+    color: white;
+    background-color: black;
+}
+
+/* Award section (full screen, model viewers) */
+.award-section {
     display: flex;
+    height: 100vh;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    z-index: 10;
-    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
 }
 
-.nav-button {
-    right: 20px;
-}
-
-.back-button {
-    left: 20px;
-}
-
-.nav-button:hover, .back-button:hover {
-    transform: translateY(-50%) scale(1.1);
-}
-
-.nav-button::before {
-    content: '\2192'; /* Unicode for right arrow */
-    font-size: 24px;
-    color: black;
-}
-
-.back-button::before {
-    content: '\2190'; /* Unicode for left arrow */
-    font-size: 24px;
-    color: black;
-}
-
-/* Content styling */
-.content {
+/* Text box */
+.award-section .text {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
     text-align: center;
-    color: black;
-    z-index: 1;
+    position: absolute;
+    top: 20px;
+    z-index: 10;
 }
 
-.content h1 {
-    font-size: 3rem;
+.award-section h1 {
     font-weight: bold;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid white; /* White box around headers */
-    display: inline-block;
+    font-size: 3rem;
+    color: black;
+}
+
+/* Model container */
+.award-section .model-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Model styles */
+.model-container model-viewer {
+    width: 45%; /* Cards side by side for runners-up */
+    height: auto;
+    margin: 10px;
+}
+
+/* Section specific background colors */
+#runners-up {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.content h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
+#winner {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.model-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-model-viewer {
-    width: 400px;
-    height: 400px;
-}
-
-#runners-up .model-container model-viewer {
-    width: 400px;
-    height: 400px;
-}
-
-#winner model-viewer {
-    width: 600px; /* 1.5x bigger */
-    height: 600px; /* 1.5x bigger */
-    margin: 0 auto; /* Center the model */
-}
-
-/* Fade animation */
-.fade-out {
-    animation: fadeOut 0.5s forwards;
-}
-
-@keyframes fadeOut {
-    to { opacity: 0; }
-}
-
-/* Rotate card instruction */
-.content h2::after {
-    content: '[rotate the card to reveal winner]';
-    display: block;
-    font-size: 1rem;
-    color: gray;
-    margin-top: 10px;
+/* Make the background video visible in the main page */
+.main-page video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
