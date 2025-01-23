@@ -17,6 +17,7 @@
             height: 100%;
             font-family: Helvetica, sans-serif; /* Changed to Helvetica */
             scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         section {
@@ -25,11 +26,12 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            flex-direction: column; /* Added column direction for text + models */
         }
 
         /* Background video */
         video.background-video {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -92,7 +94,20 @@
             height: 400px;
         }
 
-        /* For the 1.5x larger winner card */
+        /* Layout for Runners Up: Cards Side by Side */
+        .runners-up .card-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        /* Layout for Winner: Card Centered */
+        .winner-card {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
         .winner-card model-viewer {
             width: 600px;
             height: 600px;
@@ -120,10 +135,10 @@
     </section>
 
     <!-- Second Page: ENTRANCE OF THE YEAR - RUNNERS UP -->
-    <section id="second-page">
+    <section id="second-page" class="runners-up">
         <div>
             <div class="header">ENTRANCE OF THE YEAR - RUNNERS UP</div>
-            <div>
+            <div class="card-container">
                 <model-viewer alt="Entrance Card 3" src="Entrance/ENOTY3.glb" camera-controls></model-viewer>
                 <model-viewer alt="Entrance Card 2" src="Entrance/ENOTY2.glb" camera-controls></model-viewer>
             </div>
