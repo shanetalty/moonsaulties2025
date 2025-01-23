@@ -14,18 +14,15 @@
         <source src="moonsaultiesheader.mp4" type="video/mp4">
     </video>
 
-    <!-- Full-screen section 1: logo and start arrow -->
+    <!-- Full-screen section 1: logo -->
     <section id="page1" class="section">
         <div class="center">
             <img id="logo" src="moonsaultieslogo.png" alt="Moonsaulties Logo">
         </div>
-        <div class="arrow-button" onclick="goToPage(2)">
-            <span>→</span>
-        </div>
     </section>
 
     <!-- Full-screen section 2: Runners-up -->
-    <section id="page2" class="section hidden">
+    <section id="page2" class="section">
         <div class="page-header">
             ENTRANCE OF THE YEAR - RUNNERS UP
         </div>
@@ -33,25 +30,19 @@
             <model-viewer src="Entrance/ENOTY3.glb" alt="Entrance 3" camera-controls shadow-intensity="1"></model-viewer>
             <model-viewer src="Entrance/ENOTY2.glb" alt="Entrance 2" camera-controls shadow-intensity="1"></model-viewer>
         </div>
-        <div class="arrow-button" onclick="goToPage(3)">
-            <span>→</span>
-        </div>
     </section>
 
     <!-- Full-screen section 3: Winner -->
-    <section id="page3" class="section hidden">
+    <section id="page3" class="section">
         <div class="page-header">
             ENTRANCE OF THE YEAR - WINNER
         </div>
         <div class="center">
             <model-viewer src="Entrance/ENOTY1.glb" alt="Entrance 1" camera-controls shadow-intensity="1" style="width: 450px; height: 450px;"></model-viewer>
         </div>
-        <div class="arrow-button" onclick="goToPage(1)">
-            <span>→</span>
-        </div>
     </section>
 
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
