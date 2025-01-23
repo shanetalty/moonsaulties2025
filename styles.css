@@ -66,3 +66,82 @@ body, html {
 
 .back-button {
     left: 20px;
+}
+
+.nav-button:hover, .back-button:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-button::before {
+    content: '\2192'; /* Unicode for right arrow */
+    font-size: 24px;
+    color: black;
+}
+
+.back-button::before {
+    content: '\2190'; /* Unicode for left arrow */
+    font-size: 24px;
+    color: black;
+}
+
+/* Content styling */
+.content {
+    text-align: center;
+    color: black;
+    z-index: 1;
+}
+
+.content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid white; /* White box around headers */
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.model-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+model-viewer {
+    width: 400px;
+    height: 400px;
+}
+
+#runners-up .model-container model-viewer {
+    width: 400px;
+    height: 400px;
+}
+
+#winner model-viewer {
+    width: 600px; /* 1.5x bigger */
+    height: 600px; /* 1.5x bigger */
+    margin: 0 auto; /* Center the model */
+}
+
+/* Fade animation */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+/* Rotate card instruction */
+.content h2::after {
+    content: '[rotate the card to reveal winner]';
+    display: block;
+    font-size: 1rem;
+    color: gray;
+    margin-top: 10px;
+}
