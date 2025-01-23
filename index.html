@@ -29,6 +29,30 @@
             flex-direction: column;
         }
 
+         .top-right-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-right-buttons a {
+            text-decoration: none;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .top-right-buttons a:hover {
+            background-color: white;
+            color: black;
+        }
+
         /* Background video */
         video.background-video {
             position: fixed;
@@ -122,8 +146,14 @@
         <source src="moonsaultiesheader.mp4" type="video/mp4">
     </video>
 
+
+
     <!-- First Page: Logo and Scroll Arrow -->
     <section id="first-page">
+    	    <div class="top-right-buttons">
+        <a href="https://discord.gg/moonsault" target="_blank">Join Discord</a>
+        <a href="https://moonsaultcollective-shop.fourthwall.com" target="_blank">Merch</a>
+    </div>
         <div>
             <img src="moonsaultieslogo.png" alt="Moonsaulties Logo">
             <div class="arrow-container">
