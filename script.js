@@ -1,21 +1,23 @@
 // script.js
 
-const sections = document.querySelectorAll('.section');
-let currentSection = 0;
-
+// Function to navigate between sections
 function goToSection(sectionId) {
-    const target = document.getElementById(sectionId);
-    if (target) {
-        sections[currentSection].classList.add('fade-out');
+    const currentSection = document.querySelector('.section.active');
+    const nextSection = document.getElementById(sectionId);
+
+    if (currentSection && nextSection) {
+        // Add fade-out animation to the current section
+        currentSection.classList.add('fade-out');
+
+        // Wait for the animation to complete before switching
         setTimeout(() => {
-            sections[currentSection].style.display = 'none';
-            target.style.display = 'flex';
-            currentSection = Array.from(sections).indexOf(target);
-        }, 500);
+            currentSection.classList.remove('active', 'fade-out');
+            nextSection.classList.add('active');
+        }, 500); // Match animation duration in CSS
     }
 }
 
-// Initialize visibility
-sections.forEach((section, index) => {
-    section.style.display = index === 0 ? 'flex' : 'none';
+// Initial setup to mark the first section as active
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.section').classList.add('active');
 });
