@@ -167,34 +167,70 @@
             height: 600px;
         }
 
-        /* Mobile-specific styles */
+/* Mobile-specific styles */
 @media (max-width: 768px) {
-    .winners-container {
+    /* Adjust the card container layout for runners-up */
+    .runners-up .card-container {
         flex-direction: column;
-        align-items: center; /* Center aligns the cards */
-    }
-
-    .winner-card {
-        max-width: 90%; /* Reduce the width to make the cards smaller */
-        margin: 10px 0; /* Add space between cards */
-        padding: 15px; /* Adjust padding for smaller space */
-    }
-
-    .runners-up-container {
-        flex-direction: column; /* Stack the runner-up cards */
         align-items: center;
-        gap: 10px; /* Add some space between stacked cards */
+        gap: 20px; /* Space between stacked cards */
     }
 
-    .runners-up-card {
-        max-width: 85%; /* Make runner-up cards a bit smaller */
-        padding: 10px; /* Adjust padding */
+    /* Winner card adjustments for mobile */
+    .winner-card {
+        flex-direction: column;
+        align-items: center;
     }
 
-    h3, p {
-        font-size: 0.9rem; /* Slightly smaller font size for text */
+    /* Make the winner card fit well on mobile */
+    .winner-card model-viewer {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    /* Reduce font sizes for headers */
+    .header {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    /* Adjust buttons in the footer and top-right */
+    .top-right-buttons a,
+    .footer-buttons a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .footer-section {
+        font-size: 16px;
+    }
+
+    /* Adjust arrows for smaller screens */
+    .arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    /* Margin adjustments for sections */
+    section {
+        padding: 20px;
+    }
+
+    /* Make the runner-up model-viewer cards smaller on mobile */
+    .runners-up .card-container model-viewer {
+        width: 250px;  /* Adjusted smaller size */
+        height: 250px; /* Adjusted height */
+    }
+
+    /* Ensure cards stack properly on mobile */
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Space between cards */
     }
 }
+
 
 
     </style>
