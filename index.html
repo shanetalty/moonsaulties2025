@@ -15,9 +15,9 @@
 
         body, html {
             height: 100%;
-            font-family: Helvetica, sans-serif; /* Changed to Helvetica */
+            font-family: Helvetica, sans-serif;
             scroll-behavior: smooth;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
 
         section {
@@ -26,7 +26,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            flex-direction: column; /* Added column direction for text + models */
+            flex-direction: column;
         }
 
         /* Background video */
@@ -46,7 +46,7 @@
         }
 
         #first-page img {
-            width: 600px; /* Increased size to 600px */
+            width: 600px;
             height: auto;
         }
 
@@ -172,6 +172,27 @@
             <div class="header">EVENT OF THE YEAR - WINNER</div>
             <div class="winner-card">
                 <model-viewer alt="Event Card 1" src="Event/EOTY1.glb" camera-controls></model-viewer>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sixth Page: MANAGER OF THE YEAR - RUNNERS UP -->
+    <section id="sixth-page" class="runners-up">
+        <div>
+            <div class="header">MANAGER OF THE YEAR - RUNNERS UP</div>
+            <div class="card-container">
+                <model-viewer alt="Manager Card 3" src="Manager/MANOTY3.glb" camera-controls></model-viewer>
+                <model-viewer alt="Manager Card 2" src="Manager/MANOTY2.glb" camera-controls></model-viewer>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seventh Page: MANAGER OF THE YEAR - WINNER -->
+    <section id="seventh-page">
+        <div>
+            <div class="header">MANAGER OF THE YEAR - WINNER</div>
+            <div class="winner-card">
+                <model-viewer alt="Manager Card 1" src="Manager/MANOTY1.glb" camera-controls></model-viewer>
             </div>
         </div>
     </section>
