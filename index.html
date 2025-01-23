@@ -3,38 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moonsaulties 2025</title>
+    <title>Moonsaulties Awards</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Main Page with the Logo -->
-    <div class="main-page">
-        <img src="moonsaultieslogo.png" alt="Moonsaulties Logo" class="logo">
-        <div class="scroll-icon" id="next-section">&#8594;</div>
-    </div>
-    
-    <!-- Runners Up Section -->
-    <section class="award-section" id="runners-up">
-        <div class="text">
-            <h1>EVENT OF THE YEAR - RUNNERS UP</h1>
+
+    <!-- Background video -->
+    <video id="background-video" autoplay loop muted>
+        <source src="moonsaultiesheader.mp4" type="video/mp4">
+    </video>
+
+    <!-- Full-screen section 1: logo and start arrow -->
+    <section id="page1" class="section">
+        <div class="center">
+            <img id="logo" src="moonsaultieslogo.png" alt="Moonsaulties Logo">
         </div>
-        <div class="model-container">
-            <model-viewer src="Entrance/ENOTY3.glb" alt="3D Model for Runners Up Card 1" camera-controls></model-viewer>
-            <model-viewer src="Entrance/ENOTY2.glb" alt="3D Model for Runners Up Card 2" camera-controls></model-viewer>
+        <div class="arrow-button" onclick="goToPage(2)">
+            <span>→</span>
         </div>
     </section>
 
-    <!-- Winning Event Section -->
-    <section class="award-section" id="winner">
-        <div class="text">
-            <h1>EVENT OF THE YEAR</h1>
+    <!-- Full-screen section 2: Runners-up -->
+    <section id="page2" class="section hidden">
+        <div class="page-header">
+            ENTRANCE OF THE YEAR - RUNNERS UP
         </div>
-        <div class="model-container">
-            <model-viewer src="Entrance/ENOTY1.glb" alt="3D Model for Winner" camera-controls></model-viewer>
+        <div class="center">
+            <model-viewer src="Entrance/ENOTY3.glb" alt="Entrance 3" camera-controls shadow-intensity="1"></model-viewer>
+            <model-viewer src="Entrance/ENOTY2.glb" alt="Entrance 2" camera-controls shadow-intensity="1"></model-viewer>
+        </div>
+        <div class="arrow-button" onclick="goToPage(3)">
+            <span>→</span>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <!-- Full-screen section 3: Winner -->
+    <section id="page3" class="section hidden">
+        <div class="page-header">
+            ENTRANCE OF THE YEAR - WINNER
+        </div>
+        <div class="center">
+            <model-viewer src="Entrance/ENOTY1.glb" alt="Entrance 1" camera-controls shadow-intensity="1" style="width: 450px; height: 450px;"></model-viewer>
+        </div>
+        <div class="arrow-button" onclick="goToPage(1)">
+            <span>→</span>
+        </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+
 </body>
 </html>
