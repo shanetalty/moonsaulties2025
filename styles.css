@@ -34,15 +34,6 @@ section {
     z-index: 1;
 }
 
-/* Right arrow button style */
-.arrow-button {
-    position: absolute;
-    bottom: 20px;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
-
 /* Header style for next pages */
 .page-header {
     color: black;
@@ -64,13 +55,9 @@ model-viewer {
     align-items: center;
 }
 
-/* Styling for the arrow inside the white circle */
-.arrow-button span {
-    display: inline-block;
-    padding: 10px;
-    background-color: white;
-    border-radius: 50%;
-    border: 2px solid black;
+/* Smooth scrolling between sections */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Hide sections initially */
